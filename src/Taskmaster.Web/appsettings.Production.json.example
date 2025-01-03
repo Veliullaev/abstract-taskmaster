@@ -1,0 +1,11 @@
+{
+  "ConnectionStrings": {
+    "Taskmaster": "Host=localhost;Port=8588;Database=Taskmaster;Username=postgres;Password=postgres"
+  },
+  "Logging": {
+    "LogLevel": {
+      "Default": "Information",
+      "Microsoft.AspNetCore": "Warning"
+    }
+  }
+}

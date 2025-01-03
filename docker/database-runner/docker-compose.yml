@@ -1,0 +1,16 @@
+services:
+    postgres-taskmaster:
+        image: postgres:14
+        ports: 
+            - "8588:5432"
+        volumes:
+            - ./database-data-taskmaster:/var/lib/postgresql/data/
+            - ./init-database.sh:/docker-entrypoint-initdb.d/init-database.sh
+        environment:        
+            - POSTGRES_PASSWORD=postgres
+            - MAX_CONNECTION=200
+            
+volumes:
+    database-data-taskmaster:
+        external: false
+        

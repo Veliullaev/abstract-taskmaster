@@ -478,4 +478,5 @@ docker/**/data/
 docker/**/pgdata/
 docker/**/Images/
 docker/**/*.dump
+docker/**/database-data-taskmaster
 deploy/ansible/passwords.yml
