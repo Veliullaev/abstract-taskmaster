@@ -3,13 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.11.35303.130
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Taskmaster.Web", "Taskmaster.Web\Taskmaster.Web.csproj", "{D139F0C8-9431-49DA-A607-EEBB2DC9CA36}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Taskmaster.Web", "Taskmaster.Web\Taskmaster.Web.csproj", "{D139F0C8-9431-49DA-A607-EEBB2DC9CA36}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Taskmaster.Services", "Taskmaster.Services\Taskmaster.Services.csproj", "{37C50AEB-DAFD-4EF2-8115-0AEAEEF93AF3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Taskmaster.Services", "Taskmaster.Services\Taskmaster.Services.csproj", "{37C50AEB-DAFD-4EF2-8115-0AEAEEF93AF3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Taskmaster.Infrastructure", "Taskmaster.Infrastructure\Taskmaster.Infrastructure.csproj", "{32F4EA3F-0258-4B20-8C2F-4EAB03668841}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Taskmaster.Infrastructure", "Taskmaster.Infrastructure\Taskmaster.Infrastructure.csproj", "{32F4EA3F-0258-4B20-8C2F-4EAB03668841}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Taskmaster.Application", "Taskmaster.Application\Taskmaster.Application.csproj", "{A84FD5C7-CEB1-4DD7-B001-79C66A806B33}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Taskmaster.Application", "Taskmaster.Application\Taskmaster.Application.csproj", "{A84FD5C7-CEB1-4DD7-B001-79C66A806B33}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Taskmaster.Core", "Taskmaster.Core\Taskmaster.Core.csproj", "{DD4C5F50-981C-4DC6-A244-5C3366439F84}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Taskmaster.Common", "Taskmaster.Common\Taskmaster.Common.csproj", "{92D0A9A8-4DAC-4652-B95C-697AEB24514D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +37,14 @@ Global
 		{A84FD5C7-CEB1-4DD7-B001-79C66A806B33}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A84FD5C7-CEB1-4DD7-B001-79C66A806B33}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A84FD5C7-CEB1-4DD7-B001-79C66A806B33}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DD4C5F50-981C-4DC6-A244-5C3366439F84}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD4C5F50-981C-4DC6-A244-5C3366439F84}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD4C5F50-981C-4DC6-A244-5C3366439F84}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD4C5F50-981C-4DC6-A244-5C3366439F84}.Release|Any CPU.Build.0 = Release|Any CPU
+		{92D0A9A8-4DAC-4652-B95C-697AEB24514D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{92D0A9A8-4DAC-4652-B95C-697AEB24514D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{92D0A9A8-4DAC-4652-B95C-697AEB24514D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{92D0A9A8-4DAC-4652-B95C-697AEB24514D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

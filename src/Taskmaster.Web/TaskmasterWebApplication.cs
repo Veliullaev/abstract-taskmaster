@@ -9,6 +9,9 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Net.Http.Headers;
 using Serilog;
 using Serilog.Events;
+using Taskmaster.Common;
+using Taskmaster.Core;
+using Taskmaster.Infrastructure;
 
 namespace Taskmaster.Web;
 
@@ -43,9 +46,14 @@ public class TaskmasterWebApplication
 
             var services = builder.Services;
 
+            var taskmasterConfig = new TaskmasterConfiguration();
+            builder.Configuration.Bind(taskmasterConfig);
 
             services.AddSwaggerGen();
 
+            services.AddModules(
+                new TaskmasterInfractructureModule(taskmasterConfig)
+                );
 
             var app = builder.Build();
 
@@ -68,7 +76,7 @@ public class TaskmasterWebApplication
                 app.UseSwagger();
                 app.UseSwaggerUI(x =>
                 {
-                
+
                 });
             }
 
