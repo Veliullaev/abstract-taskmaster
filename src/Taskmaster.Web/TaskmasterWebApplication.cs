@@ -14,11 +14,20 @@ using Taskmaster.Core;
 using Taskmaster.Infrastructure;
 using Taskmaster.Services;
 using Aspire.Hosting;
+using Microsoft.EntityFrameworkCore;
 
 namespace Taskmaster.Web;
 
 public class TaskmasterWebApplication
 {
+    public void ConfigureServices(IServiceCollection services)
+    {
+        services.AddDbContext<TaskmasterDbContext>(options =>
+        {
+            options.UseNpgsql();
+        });
+    }
+
     public void Start(string[] args)
     {
         Log.Logger = new LoggerConfiguration()
@@ -55,7 +64,8 @@ public class TaskmasterWebApplication
 
             services.AddModules(
                 new TaskmasterInfractructureModule(taskmasterConfig),
-                new TaskmasterServicesModule()
+                new TaskmasterServicesModule(),
+                new TaskmasterWebModule()
                 );
 
             if (taskmasterConfig.IsMessagingServer)
