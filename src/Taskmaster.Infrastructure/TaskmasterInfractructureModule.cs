@@ -8,9 +8,12 @@ public class TaskmasterInfractructureModule(TaskmasterConfiguration configuratio
 {
     public void RegisterServices(IServiceCollection services)
     {
-        services.AddDbContext<TaskmasterDbContext>(config =>
+        if (configuration.IsMessagingServer)
         {
-            config.UseNpgsql(configuration.TaskmasterConnectionString?.ConnectionString);
-        });
+            services.AddDbContext<TaskmasterDbContext>(config =>
+            {
+                config.UseNpgsql(configuration.TaskmasterConnectionString?.ConnectionString);
+            });
+        }
     }
 }

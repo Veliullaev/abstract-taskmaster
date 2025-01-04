@@ -1,6 +1,5 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using Taskmaster.Core;
-using System.Linq;
 
 namespace Taskmaster.Common;
 

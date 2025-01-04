@@ -12,6 +12,8 @@ using Serilog.Events;
 using Taskmaster.Common;
 using Taskmaster.Core;
 using Taskmaster.Infrastructure;
+using Taskmaster.Services;
+using Aspire.Hosting;
 
 namespace Taskmaster.Web;
 
@@ -52,10 +54,21 @@ public class TaskmasterWebApplication
             services.AddSwaggerGen();
 
             services.AddModules(
-                new TaskmasterInfractructureModule(taskmasterConfig)
+                new TaskmasterInfractructureModule(taskmasterConfig),
+                new TaskmasterServicesModule()
                 );
 
+            if (taskmasterConfig.IsMessagingServer)
+            {
+                //var rabbitBuilder = DistributedApplication.CreateBuilder(args);
+                //var rabbitmq = rabbitBuilder.AddRabbitMQ("messaging");
+            }
+
             var app = builder.Build();
+
+            var logger = app.Services.GetRequiredService<ILogger<TaskmasterWebApplication>>();
+
+            logger.LogInformation("Starting up...");
 
             app.UseForwardedHeaders(new ForwardedHeadersOptions
             {
@@ -74,11 +87,10 @@ public class TaskmasterWebApplication
             if (!app.Environment.IsProduction())
             {
                 app.UseSwagger();
-                app.UseSwaggerUI(x =>
-                {
-
-                });
             }
+
+            app.UseDefaultFiles();
+            app.UseStaticFiles();
 
             app.Run();
         }
